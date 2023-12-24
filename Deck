@@ -1,0 +1,50 @@
+package week6codingproject;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+//Step 1b
+
+public class Deck {
+
+// This Creates a List of cards
+	
+	List<Card> cards = new ArrayList<Card>();
+	
+//Creates the SUITS of the cards using an array 
+
+private static final String[] SUITS = {"Clubs", "Diamonds", "Hearts", "Spades"}; 
+
+//Creates CARDNAMES of the cards in the array
+
+private static final String[] CARDNAME = {"2","3","4","5","6","7","8","9","10", "Jack","Queen","King","Ace"}; 
+
+//Constructor
+
+		public Deck() {
+			for(String s : SUITS) { 
+			for(int i =2; i< CARDNAME.length + 2; i++) {
+			String name = CARDNAME[i-2] + " of " + s;
+			Card c = new Card(name,i);
+            cards.add(c);
+}
+}
+	
+}
+
+//Methods:
+
+	//The Method to shuffle cards
+
+		public void shuffle() { 
+			Collections.shuffle(cards);
+}
+	// The method to draw a card
+		
+		public Card draw() {  
+			return cards.remove(0);
+	
+}
+		
+}
