@@ -1,0 +1,44 @@
+package week6codingproject;
+
+//Step 1a-
+
+public class Card {
+
+	private int value;
+	private String name;
+	
+
+//Constructor for Card Class
+	
+		public Card (String name, int value) {
+			this.name = name;
+			this.value = value;
+}
+
+//Getter
+		
+		public int getValue() {
+			return value;
+}
+
+//Setter
+		
+		public void setValue(int value) {
+	this.value = value;
+}
+
+
+		public String getName() {
+			return name;
+}
+
+
+		public void setName(String name) {
+			this.name = name;
+}
+	
+//this will print name and value of the method describe
+		
+	public void describe() {
+		System.out.println(name  +" has the value of: " + value); 
+}}
