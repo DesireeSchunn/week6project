@@ -1,0 +1,66 @@
+package week6codingproject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//Step 1c-
+public class Player {
+
+//Creates a List of cards in an Array
+	
+	private List<Card> hand = new ArrayList<Card>();  
+	
+//Creates a field of an integer value named score
+	
+	private int score; 
+	
+//Creating a field named name
+	
+	private String name;
+	
+	
+	
+//Constructor 
+	
+	public Player() {
+		setScore(0);
+		
+}
+	
+//Methods
+	
+	public void describe() {  
+		System.out.println("The player has the following cards : " + name);
+		for(Card card : hand) {
+			card.describe();
+}
+}
+	
+	//Method to remove and return the top card of the Hand	
+	
+	public Card flip() {   
+		return hand.remove(0);
+}
+
+	// Method to take a deck as an argument and call the draw method 
+	
+	public void draw(Deck deck) {
+		hand.add(deck.draw());
+}
+	
+	
+	public void incrementScore() {   
+		setScore(getScore() + 1);
+}
+	
+//Getter
+	
+	public int getScore() { 
+		return score;
+}
+	
+//Setter
+	
+	public void setScore(int score) { 
+		this.score = score;
+}}
