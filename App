@@ -1,0 +1,62 @@
+package week6codingproject;
+
+public class App {
+
+	
+
+	
+	public static  void main(String[] args) {
+
+//Step2a - Instantiate a deck and 2 players
+		
+		Deck deck = new Deck(); 
+		Player player1 = new Player();
+		Player player2 = new Player();
+		
+	//Shuffle Method		
+		deck.shuffle(); 
+		
+//Step2b - use a traditional for loop to iterate through the deck
+		
+		for(int i = 0; i < 52; i++) { 
+			if (i % 2 == 0) {
+				player1.draw(deck); 
+			}else {
+				player2.draw(deck);
+}
+}
+		
+// Step 2c - iterates 26 times and uses flip method for both players
+		
+		for(int i = 0; i < 26 ; i++) {  
+			week6codingproject.Card player1Cards = player1.flip(); 
+			week6codingproject.Card player2Cards = player2.flip();
+			
+			if (player1Cards.getValue() > player2Cards.getValue()) { 
+				player1.incrementScore();
+				
+			} if (player1Cards.getValue() < player2Cards.getValue()) {
+				player2.incrementScore();
+}
+}
+	
+		
+// Step 2d - compare score for each player
+		
+	 System.out.println("Player's 1 Score is : " + player1.getScore());
+	 System.out.println("Player's 2 Score is : " + player2.getScore());
+		
+	
+//Step 2e-
+	 
+		if(player1.getScore() > player2.getScore()) {
+			System.out.println("Player 1 has Won this War Game of Cards!!!"); 
+		
+		}if(player1.getScore() < player2.getScore()) {
+			System.out.println("Player 2 has Won this War Game of Cards!!!");
+			
+		}if(player1.getScore() ==  player2.getScore()) {
+			System.out.println("It is a Draw Nobody Wins in War!!!");
+}
+		
+}}
